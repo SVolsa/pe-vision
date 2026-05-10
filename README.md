@@ -1,53 +1,52 @@
 # PE Vision
 
-> A fancy PE file snooper — Rust + egui
+> A minimal PE file viewer — Rust + egui
 
 [中文](README_zh.md)
 
 ---
 
-Throw a `.exe` / `.dll` / `.sys` (or any PE file) at it and see what's inside.
-Headers, sections, imports, exports — all laid out with a dark theme and some eye candy.
+Drop any `.exe` / `.dll` / `.sys` (or any other PE file) into it, and see what's inside.
+Added some rough visual effects for headers, sections, import table, export table, etc.
 
-## What it does
+## What It Does
 
-- **Parses PE files** — DOS header →․NT headers → →sections → →imports → →exports. All hand-written Rust, zero deps.
-- **Hex preview** — Click anything, see the bytes. Smart windowing so it won't eat your RAM.
-- **Structure map** — Two-row visual of the whole PE layout. Hover for details.
-- **Looks pretty** — Dark theme, floating particles, smooth hover glows. Because why not.
+- **Parse PE Files** — From DOS header → NT header → Section Table → Import Table → Export Table. Pure hand-written Rust, zero dependencies.
+- **Hex Preview** — Windowed rendering that won't eat up your memory.
+- **Structural Diagram** — Dual-row visualization of PE layout, hover for details.
 
-## Build & run
+
+## Build & Run
 
 ```bash
 cargo build --release
 cargo run --release
 ```
 
-Needs Rust edition 2024. On Windows + GNU toolchain you'll want MinGW libs.
+Requires Rust edition 2024. Windows + GNU toolchain requires MinGW libraries.
 
-## Usage
+## How to Use
 
-1. Open the app
-2. **Open File** (or drag & drop a PE file)
-3. Click around the tree on the left → details + hex pop up on the right
-4. Hover the structure map at the bottom for a bird's-eye view
+1. Launch the software
+2. **Open File** (or just drag a PE file into the window)
+3. Hover over the structural diagram below for an overview
 
-## Project skeleton
+## Project Structure
 
 ```
 src/
-├┰ main.rs      — entry point, dark theme
-├┰ app.rs       — UI panels, tree, async loading
-├┰ pe.rs        — PE file parser (pure Rust, no helpers)
-├┰ hex.rs       — hex viewer with smart windowing
-├┰ visuals.rs   — particles, glow, structure map, spinner
+├── main.rs      — Entry point, dark theme
+├── app.rs       — UI panels, tree view, async loading
+├── pe.rs        — PE parser (pure Rust, no external dependencies)
+├── hex.rs       — Hex viewer (smart windowed rendering)
+└── visuals.rs   — Particles, glow effects, structural diagrams, loading animations
 ```
 
-## Who
+## Who Made This
 
-- **Volsa*) ([@SVolsa](https://github.com/SVolsa)) — project & code
-- **Claude** (Anthropic) — coding buddy
+- **Volsa** ([@SVolsa](https://github.com/SVolsa)) — Project & Code
+- **Claude** (Anthropic) — Cleaning up my awful code
 
 ## License
 
-MIT — do whatever.
+MIT
