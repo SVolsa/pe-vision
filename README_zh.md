@@ -45,7 +45,7 @@ src/
 ## 谁写的
 
 - **Volsa** ([@SVolsa](https://github.com/SVolsa)) — 项目 & 代码
-- **Claude** (Anthropic) — 修我写的狗屎
+- **Claude** (Anthropic)
 
 ## 许可证
 
